@@ -15,4 +15,9 @@
     var pool = new pg.Pool(config);
     console.log(config);
 
+    geoJSON.route('/testGeoJSON').get(function (req,res) {
+        res.json({message:req.originalUrl});
+    });
+
+
     module.exports = geoJSON;
