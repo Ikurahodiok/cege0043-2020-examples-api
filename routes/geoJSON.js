@@ -1,6 +1,7 @@
     var express = require('express');
     var pg = require('pg');
 	var geoJSON = require('express').Router();
+    var fs = require('fs');
 
     var configtext = ""+fs.readFileSync("/home/studentuser/certs/postGISConnection.js");
 
