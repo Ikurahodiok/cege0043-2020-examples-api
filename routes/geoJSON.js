@@ -19,7 +19,7 @@
         res.json({message:req.originalUrl});
     });
 
-    app.get('/postgistest', function (req,res) {
+    geoJSON.get('/postgistest', function (req,res) {
     pool.connect(function(err,client,done) {
            if(err){
                console.log("not able to get connection "+ err);
