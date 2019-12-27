@@ -28,4 +28,8 @@ app.use(function (req, res, next) {
 	next();
 });
 
+const geoJSON = require('./routes/geoJSON');
+app.use('/', geoJSON);
+
+
 app.use(express.static(__dirname));
