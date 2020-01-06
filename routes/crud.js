@@ -76,7 +76,7 @@ crud.post('/deleteFormData',(req,res) => {
                      console.log(err);
                      res.status(400).send(err);
                 }
-                res.status(200).send("Form Data ID "+ param2+ " has been deleted");
+                res.status(200).send("Form Data with ID "+ param2+ " and port_id "+ param1 + " has been deleted (if it existed in the database)");
              });
       });
 });
