@@ -3,6 +3,7 @@ var express = require('express');
 var path = require("path");
 var fs = require('fs');
 var app = express();
+const bodyParser = require('body-parser');
 
 // add an https server to serve files 
 var https = require('https');
@@ -14,6 +15,7 @@ var credentials = {key: privateKey, cert: certificate};
 var httpsServer = https.createServer(credentials, app);
 
 httpsServer.listen(8000);
+app.use(bodyParser.urlencoded({ extended: true }));
 
 
 app.get('/',function (req,res) {

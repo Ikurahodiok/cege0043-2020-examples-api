@@ -2,7 +2,6 @@
     var pg = require('pg');
 	var crud = require('express').Router();
     var fs = require('fs');
-
     var configtext = ""+fs.readFileSync("/home/studentuser/certs/postGISConnection.js");
 
     // now convert the configruation file into the correct format -i.e. a name/value pair array
@@ -15,8 +14,9 @@
     var pool = new pg.Pool(config);
     console.log(config);
 
-    crud.post('/testCRUD').get(function (req,res) {
-        res.json({message:req.originalUrl});
+    crud.post('/testCRUD',(req,res) => {
+        res.json({message:req.body});
     });
+
 
     module.exports = crud;
