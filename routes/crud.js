@@ -29,15 +29,15 @@
       // pull the geometry component together
       // note that well known text requires the points as longitude/latitude !
       // well known text should look like: 'POINT(-71.064544 42.28787)'
-      var param1 = "'" + req.body.longitude + "'";
-      var param2 = "'"  + req.body.latitude + "'";
+      var param1 = req.body.longitude ;
+      var param2 =  req.body.latitude ;
 
-      var param3 = "'" + req.body.name + "'";
-      var param4 = "'"  + req.body.surname + "'";
-      var param5 = "'" +req.body.module+ "'";
-      var param6 = "'" +req.body.language+ "'";
-      var param7 = "'" +req.body.modulelist+ "'";
-      var param8 = "'" + req.body.lecturetime +"'";
+      var param3 =  req.body.name ;
+      var param4 =  req.body.surname ;
+      var param5 = req.body.module;
+      var param6 = req.body.language;
+      var param7 = req.body.modulelist;
+      var param8 = req.body.lecturetime ;
       var param9 =  req.body.port_id ;
      
       // no need for injection prevention for st_geomfromtext as if 
