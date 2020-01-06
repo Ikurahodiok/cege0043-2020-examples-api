@@ -17,7 +17,7 @@ httpsServer.listen(3000);
 
 
 app.get('/',function (req,res) {
-	res.send("Hello World from the HTTPS Server");
+	res.send("Hello World from the demo HTTPS Server on port 3000");
 });
 
 // adding functionality to log the requests
@@ -27,5 +27,9 @@ app.use(function (req, res, next) {
 	console.log("The file " + filename + " was requested.");
 	next();
 });
+
+const geoJSON = require('./routes/geoJSON');
+app.use('/', geoJSON);
+
 
 app.use(express.static(__dirname));
