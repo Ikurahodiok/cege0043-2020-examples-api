@@ -38,7 +38,7 @@
       var param6 = "'" +req.body.language+ "'";
       var param7 = "'" +req.body.modulelist+ "'";
       var param8 = "'" + req.body.lecturetime +"'";
-      var param9 = "'"+ req.param.port_id + "'";
+      var param9 =  req.body.port_id ;
      
       // no need for injection prevention for st_geomfromtext as if 
       // the lat/lng values are not numbers it will not process them at all 
