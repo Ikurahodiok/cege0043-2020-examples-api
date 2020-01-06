@@ -35,7 +35,7 @@
       var param3 = "'" + req.body.name + "'";
       var param4 = "'"  + req.body.surname + "'";
       var param5 = "'" +req.body.module+ "'";
-      var param5 = "'" +req.body.language+ "'";
+      var param6 = "'" +req.body.language+ "'";
       var param7 = "'" +req.body.modulelist+ "'";
      
       var geometrystring = "st_geomfromtext('POINT($1 $2)')";
@@ -43,7 +43,7 @@
       querystring += "($3,$4,$5,$6,$7,";
       querystring += geometrystring + ")";
                 console.log(querystring);
-                client.query( querystring,[param3,param4,param5,parma6,param7,param8,param9,param10,param1,param2],function(err,result) {
+                client.query( querystring,[param3,param4,param5,param6,param7,param1,param2],function(err,result) {
                 done();
                 if(err){
                      console.log(err);
