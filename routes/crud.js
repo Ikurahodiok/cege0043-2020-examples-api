@@ -15,7 +15,7 @@
     var pool = new pg.Pool(config);
     console.log(config);
 
-    crud.route('/testGeoJSON').get(function (req,res) {
+    crud.route('/testCRUD').get(function (req,res) {
         res.json({message:req.originalUrl});
     });
 

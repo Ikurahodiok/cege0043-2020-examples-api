@@ -17,7 +17,7 @@ httpsServer.listen(8000);
 
 
 app.get('/',function (req,res) {
-	res.send("Hello World from the demo HTTPS Server on port 3000");
+	res.send("Hello World from the demo HTTPS Server on port 8000");
 });
 
 // adding functionality to log the requests
