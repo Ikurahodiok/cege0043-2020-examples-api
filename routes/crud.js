@@ -15,7 +15,7 @@
     var pool = new pg.Pool(config);
     console.log(config);
 
-    crud.all('/testCRUD').get(function (req,res) {
+    crud.post('/testCRUD').get(function (req,res) {
         res.json({message:req.originalUrl});
     });
 
