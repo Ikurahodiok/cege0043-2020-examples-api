@@ -45,7 +45,7 @@
       // impossible to run a statement such as st_geomfromtext('POINT(delete from public.formdata')
       var geometrystring = "st_geomfromtext('POINT("+req.body.latitude+" "+req.body.longitude+")',4326)";
       var querystring = "INSERT into public.formdata(name,surname,module,language, modulelist,lecturetime, port_id,location) values ";
-      querystring += "($1,$2,$3,$4,$5,$6,$7";
+      querystring += "($1,$2,$3,$4,$5,$6,$7,";
       querystring += geometrystring + ")";
                 console.log(querystring);
                 client.query( querystring,[param3,param4,param5,param6,param7,param8,param9],function(err,result) {
