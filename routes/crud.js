@@ -41,9 +41,9 @@
       // no need for injection prevention for st_geomfromtext as if 
       // the lat/lng values are not numbers it will not process them at all 
       // impossible to run a statement such as st_geomfromtext('POINT(delete from public.formdata')
-      var geometrystring = "st_geomfromtext('POINT("+req.body.latitude+" "+req.body.longitude"')";
+      var geometrystring = "st_geomfromtext('POINT("+req.body.latitude+" "+req.body.longitude+")',4326)";
       var querystring = "INSERT into public.formdata(name,surname,module,language, modulelist,location) values ";
-      querystring += "($3,$4,$5,$6,$7,";
+      querystring += "($1,$2,$3,$4,$5,";
       querystring += geometrystring + ")";
                 console.log(querystring);
                 client.query( querystring,[param3,param4,param5,param6,param7],function(err,result) {
