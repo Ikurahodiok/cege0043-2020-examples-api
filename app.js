@@ -13,7 +13,7 @@ var certificate = fs.readFileSync('/home/studentuser/certs/cert.crt').toString()
 var credentials = {key: privateKey, cert: certificate};
 var httpsServer = https.createServer(credentials, app);
 
-httpsServer.listen(3000);
+httpsServer.listen(8000);
 
 
 app.get('/',function (req,res) {
@@ -31,5 +31,7 @@ app.use(function (req, res, next) {
 const geoJSON = require('./routes/geoJSON');
 app.use('/', geoJSON);
 
+const crud = require('./routes/crud');
+app.use('/', crud);
 
 app.use(express.static(__dirname));
