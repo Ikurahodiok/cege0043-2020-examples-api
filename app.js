@@ -13,11 +13,11 @@ var certificate = fs.readFileSync('/home/studentuser/certs/cert.crt').toString()
 var credentials = {key: privateKey, cert: certificate};
 var httpsServer = https.createServer(credentials, app);
 
-httpsServer.listen(3000);
+httpsServer.listen(8000);
 
 
 app.get('/',function (req,res) {
-	res.send("Hello World from the demo HTTPS Server on port 3000");
+	res.send("Hello World from the demo api HTTPS Server on port 8000");
 });
 
 // adding functionality to log the requests
