@@ -14,9 +14,13 @@
     var pool = new pg.Pool(config);
     console.log(config);
 
-
+    // have both get and post for testCRUD so that 
+    // it can be tested via a URL call but also as a simple AJAX post request
     crud.get('/testCRUD',(req,res) => {
         res.json({message:req.originalUrl});
+    });
+    crud.post('/testCRUD',(req,res) => {
+      res.json({message:req.body});
     });
 
     crud.post('/insertFormData',(req,res) => {
