@@ -14,8 +14,9 @@
     var pool = new pg.Pool(config);
     console.log(config);
 
-    crud.post('/testCRUD',(req,res) => {
-        res.json({message:req.body});
+
+    crud.get('/testCRUD',(req,res) => {
+        res.json({message:req.originalUrl});
     });
 
     crud.post('/insertFormData',(req,res) => {
